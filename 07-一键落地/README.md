@@ -60,6 +60,7 @@ bash verify.sh --score=out/probes/<时间戳>/记录.md
 | 加一个平台 | `targets.tsv` 加一行，不用碰脚本 |
 | 网页版粘贴文本 | `core/99-系统提示词.md` |
 | 5 条日常提示词 | `prompts.md` |
+| 任务卡模板（四车道） | `templates/任务卡-四车道.md` |
 
 > `project.local.md` 里带「待填」标记时，脚本只装通用铁律、并提示你去填——**占位符不会被塞进规则文件**。
 > 填完去掉标记，项目段才会拼进去。
@@ -86,7 +87,12 @@ bash verify.sh --score=out/probes/<时间戳>/记录.md
 ├── project.local.md          ← 项目约定（出厂通用基线，`<...>` 待填）
 ├── VERSION                   ← 包版本号
 ├── memory-block.md           ← 可选：WorkBuddy MEMORY.md 记忆块
-└── prompts.md                ← 5 条可复制提示词
+├── prompts.md                ← 5 条可复制提示词
+├── verify.sh                 ← 安装校验 + 4 个行为探针
+├── sync-qoder-rules.sh       ← 同步到 ~/.qoder-cn/rules
+├── qoder-rules.tsv           ← Qoder 用户级规则清单
+├── qoder-rules/              ← 无外部源文件的规则正文模板
+└── templates/                ← 任务卡·四车道（L0–L3 / 两阶段审查 / 缺陷三态）
 ```
 
 > `archive/`（旧的单平台版本）与 `archive/backups/`（安装时的备份）都是**运行后才产生**的目录，
