@@ -25,6 +25,14 @@ bash setup.sh --paste                     # ③ 给网页版生成可粘贴文�
 只装某几个：`--only=workbuddy,codex,claude`
 连未验证平台也装：`--force`
 
+装完必须验证，别问它「记住了吗」——那是自报：
+
+```bash
+bash verify.sh            # 静态：已装文件是否与源头一致 + 关键条款是否都在
+bash verify.sh --probe    # 行为：生成 4 个探针，粘进新会话，按判据打勾
+bash verify.sh --score=out/probes/<时间戳>/记录.md
+```
+
 ## 支持哪些平台（`targets.tsv` 可自己加行）
 
 | id | 装到哪 | 状态 |
