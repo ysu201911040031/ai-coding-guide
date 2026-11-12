@@ -1,0 +1,15 @@
+# 目标平台表 —— 想加平台就往这里加一行，不用改脚本
+# 格式：id <TAB> 作用域 <TAB> 相对路径 <TAB> 输出格式 <TAB> 状态 <TAB> 说明
+#   作用域：user=相对 $HOME；project=相对 $PROJ
+#   格式：rule=带 alwaysApply 的规则文件；md=纯 Markdown；mdc=Cursor 规则
+#   状态：ok=已确认约定；prob=约定存在但本机未验证（默认跳过，加 --force 才装）；paste=无文件约定，生成可粘贴文本
+workbuddy	user	.workbuddy/rules/00-协作铁律.md	rule	ok	WorkBuddy 用户级常驻规则
+codebuddy	user	.codebuddy/rules/00-协作铁律.md	rule	ok	CodeBuddy 用户级常驻规则
+claude	user	.claude/CLAUDE.md	md	ok	Claude Code 全局记忆
+claude-proj	project	CLAUDE.md	md	ok	Claude Code 项目记忆
+codex	project	AGENTS.md	md	ok	Codex / 多数 Agent 工具的项目入口
+copilot	project	.github/copilot-instructions.md	md	ok	GitHub Copilot 仓库指令
+qoder	project	.qoder/rules/general.md	rule	prob	Qoder 项目规则（未验证，--force 启用）
+cursor	project	.cursor/rules/general.mdc	mdc	prob	Cursor 项目规则（未验证，--force 启用）
+windsurf	project	.windsurfrules	md	prob	Windsurf 项目规则（未验证，--force 启用）
+paste	paste	-	paste	paste	ChatGPT / DeepSeek / Kimi 等无文件约定的平台，生成可粘贴文本
