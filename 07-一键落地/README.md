@@ -60,6 +60,8 @@ bash verify.sh --score=out/probes/<时间戳>/记录.md
 | 加一个平台 | `targets.tsv` 加一行，不用碰脚本 |
 | 网页版粘贴文本 | `core/99-系统提示词.md` |
 | 5 条日常提示词 | `prompts.md` |
+| 流程 skill（开工 / 诊断 / 收尾） | `skills/<name>/SKILL.md` |
+| 开工卡与环境记录 | `preflight/`（`python preflight.py --init`） |
 | 任务卡模板（四车道） | `templates/任务卡-四车道.md` |
 
 > `project.local.md` 里带「待填」标记时，脚本只装通用铁律、并提示你去填——**占位符不会被塞进规则文件**。
@@ -88,6 +90,8 @@ bash verify.sh --score=out/probes/<时间戳>/记录.md
 ├── VERSION                   ← 包版本号
 ├── memory-block.md           ← 可选：WorkBuddy MEMORY.md 记忆块
 ├── prompts.md                ← 5 条可复制提示词
+├── skills/                   ← 流程 skill：开工对齐 / 诊断 / 收尾（SKILL.md）
+├── preflight/                ← 开工卡：环境核对 / 漂移记录 / 复用提醒
 ├── verify.sh                 ← 安装校验 + 4 个行为探针
 ├── sync-qoder-rules.sh       ← 同步到 ~/.qoder-cn/rules
 ├── qoder-rules.tsv           ← Qoder 用户级规则清单
