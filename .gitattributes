@@ -1,0 +1,19 @@
+# ===== AI 编写规范 · 行尾与编码策略 =====
+# 核心约束：文档里的哈希与「逐字节一致」的校验依赖真实字节。
+#   一旦 git 在检出时做 CRLF↔LF 转换，那些哈希立刻全部失效。
+# 因此全局设定「不做任何转换」，一切以工作区磁盘上的真实字节为准。
+# （本仓库没有 archive/ 与 dist/，它们的哈希校验在维护者私有目录里做。）
+
+# 全部文件按原样存取，禁止任何行尾规范化
+* -text
+
+# 明确标记二进制，避免 git 尝试做 diff 或合并
+*.zip   binary
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.gif   binary
+*.ico   binary
+
+# 脚本类：即使将来在 Windows 上编写，也保持 LF（sh 脚本带 CRLF 会直接报错）
+*.sh    text eol=lf
