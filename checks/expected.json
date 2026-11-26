@@ -1,8 +1,8 @@
 {
   "_说明": "基线快照。任何有意变更（加/删准则、改上限）必须同步改这里，否则检查报红——这就是'易变的事实进检查'。",
   "handbook": {
-    "entries": 78,
-    "table_rows": 68,
+    "entries": 79,
+    "table_rows": 69,
     "p0": 20,
     "missing_from_table": [
       "J4",
